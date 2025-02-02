@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Focus Clock</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Focus Clock ⏰</h1>
+        <div class="clock">
+            <div class="clock-face">
+                <div class="hand hour-hand" id="hour-hand"></div>
+                <div class="hand minute-hand" id="minute-hand"></div>
+                <div class="hand second-hand" id="second-hand"></div>
+            </div>
+        </div>
+        <div class="controls">
+            <h2>Timer</h2>
+            <input type="number" id="timerMinutes" placeholder="Minutes" min="0">
+            <button onclick="startTimer()">Start Timer</button>
+            <button onclick="stopTimer()">Stop Timer</button>
+            <span id="timerDisplay">00:00</span>
+        </div>
+        <div class="controls">
+            <h2>Alarm</h2>
+            <input type="time" id="alarmTime">
+            <button onclick="setAlarm()">Set Alarm</button>
+            <button onclick="stopAlarm()">Stop Alarm</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
